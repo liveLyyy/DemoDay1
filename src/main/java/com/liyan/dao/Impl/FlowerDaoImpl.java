@@ -1,6 +1,6 @@
 package com.liyan.dao.Impl;
 
-import com.liyan.DBUtil.DB;
+import com.liyan.util.DB;
 import com.liyan.dao.FlowerDao;
 import com.liyan.pojo.Flower;
 
@@ -31,13 +31,16 @@ public class FlowerDaoImpl implements FlowerDao {
                 flower.setPrice(resultSet.getDouble("price"));
                 flower.setPriduction(resultSet.getString("production"));
                 list.add(flower);
-                System.out.println(list);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
-            resultSet.close();
-            preparedStatement.close();
+            try {
+                resultSet.close();
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return list;
     }

@@ -6,11 +6,14 @@ import com.liyan.service.FlowerService;
 
 import java.util.List;
 
+
 public class FlowerServiceImpl implements FlowerService {
-    private FlowerDaoImpl flowerDao;
+    private FlowerDaoImpl flowerDao=null;
+
     @Override
-    public List<Flower> findAll() throws Exception{
-        List<Flower> list=flowerDao.findAll();
+    public List<Flower> findAll() throws Exception {
+        flowerDao = new FlowerDaoImpl();
+        List<Flower> list = flowerDao.findAll();
         return list;
     }
 }
