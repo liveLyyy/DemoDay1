@@ -4,16 +4,22 @@ public class Flower {
     private Integer id;
     private String name;
     private Double price;
-    private String priduction;
+    private String production;
 
     public Flower() {
     }
 
-    public Flower(Integer id, String name, Double price, String priduction) {
+    public Flower(String name, Double price, String priductoon) {
+        this.name = name;
+        this.price = price;
+        this.production = priductoon;
+    }
+
+    public Flower(Integer id, String name, Double price, String priductoon) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.priduction = priduction;
+        this.production = production;
     }
 
     public Integer getId() {
@@ -40,11 +46,11 @@ public class Flower {
         this.price = price;
     }
 
-    public String getPriduction() {
-        return priduction;
+    public String getProduction() {
+        return production;
     }
 
-    public void setPriduction(String priduction) {
-        this.priduction = priduction;
+    public void setProduction(String production) {
+        this.production = production;
     }
 }
