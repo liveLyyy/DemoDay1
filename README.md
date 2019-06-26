@@ -1,5 +1,5 @@
 #数据库
-```DROP TABLE IF EXISTS `flower`;
+>>>```DROP TABLE IF EXISTS `flower`;
 CREATE TABLE `flower` (
  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
  `name` varchar(30) COLLATE utf8_bin NOT NULL COMMENT '花名',
